@@ -1,5 +1,5 @@
-import { generatePagination } from "../lib/pagination";
 import Link from "next/link";
+import { generatePagination } from "../lib/pagination";
 
 type Props = {
   current: number;
@@ -18,8 +18,12 @@ export default function Pagination({ current, pages, link }: Props) {
           {it.excerpt ? (
             "..."
           ) : (
-            <Link href={link.href(it.page)} as={link.as(it.page)}>
-              <a className={it.page === current ? "active" : null}>{it.page}</a>
+            <Link
+              href={link.href(it.page)}
+              as={link.as(it.page)}
+              className={it.page === current ? "active" : null}
+            >
+              {it.page}
             </Link>
           )}
         </li>
