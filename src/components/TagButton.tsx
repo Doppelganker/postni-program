@@ -3,11 +3,15 @@ import { TagContent } from "../lib/tags";
 
 type Props = {
   tag: TagContent;
+  address: string;
 };
-export default function TagButton({ tag }: Props) {
+export default function TagButton({ tag, address }: Props) {
   return (
     <>
-      <Link href={"/posts/tags/[[...slug]]"} as={`/posts/tags/${tag.slug}`}>
+      <Link
+        href={address + "/tags/[[...slug]]"}
+        as={address + `/tags/${tag.slug}`}
+      >
         {tag.name}
       </Link>
       <style jsx>{`

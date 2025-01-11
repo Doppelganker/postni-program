@@ -16,15 +16,27 @@ export default function Navigation() {
               href="/"
               className={router.pathname === "/" ? "active" : null}
             >
-              about
+              Domov
             </Link>
           </li>
           <li>
             <Link
-              href="/posts"
-              className={router.pathname.startsWith("/posts") ? "active" : null}
+              href="/exodus"
+              className={
+                router.pathname.startsWith("/exodus") ? "active" : null
+              }
             >
-              blog
+              Exodus
+            </Link>
+          </li>
+          <li>
+            <Link
+              href="/dominik"
+              className={
+                router.pathname.startsWith("/dominik") ? "active" : null
+              }
+            >
+              Dominikove stopinje
             </Link>
           </li>
         </ul>

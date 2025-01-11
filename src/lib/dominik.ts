@@ -1,25 +1,18 @@
 import fs from "fs";
 import matter from "gray-matter";
-import path from "path";
 import yaml from "js-yaml";
+import path from "path";
+import { PostContent } from "./post";
 
-const postsDirectory = path.join(process.cwd(), "content/posts");
-
-export type PostContent = {
-  readonly date: string;
-  readonly title: string;
-  readonly slug: string;
-  readonly tags?: string[];
-  readonly fullPath: string;
-};
+const postsDirectory = path.join(process.cwd(), "content/dominik");
 
 let postCache: PostContent[];
 
-export function fetchPostContent(): PostContent[] {
+export function fetchDominikPostContent(): PostContent[] {
   if (postCache) {
     return postCache;
   }
-  // Get file names under /posts
+  // Get file names under /dominik
   const fileNames = fs.readdirSync(postsDirectory);
   const allPostsData = fileNames
     .filter((it) => it.endsWith(".mdx"))
@@ -39,7 +32,7 @@ export function fetchPostContent(): PostContent[] {
         title: string;
         tags: string[];
         slug: string;
-        fullPath: string,
+        fullPath: string;
       };
       matterData.fullPath = fullPath;
 
@@ -65,18 +58,18 @@ export function fetchPostContent(): PostContent[] {
   return postCache;
 }
 
-export function countPosts(tag?: string): number {
-  return fetchPostContent().filter(
+export function countDominikPosts(tag?: string): number {
+  return fetchDominikPostContent().filter(
     (it) => !tag || (it.tags && it.tags.includes(tag))
   ).length;
 }
 
-export function listPostContent(
+export function listDominikPostContent(
   page: number,
   limit: number,
   tag?: string
 ): PostContent[] {
-  return fetchPostContent()
+  return fetchDominikPostContent()
     .filter((it) => !tag || (it.tags && it.tags.includes(tag)))
     .slice((page - 1) * limit, page * limit);
 }

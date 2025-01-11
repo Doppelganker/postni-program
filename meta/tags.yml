@@ -1,13 +1,19 @@
 tags:
-  - slug: document
-    name: document
-  - slug: mock
-    name: mock
-  - slug: style
-    name: style
-  - slug: license
-    name: license
-  - slug: mdx
-    name: mdx
-  - slug: markdown
-    name: markdown
+  - slug: day1
+    name: 01. day
+  - slug: day2
+    name: 02. day
+  - slug: day3
+    name: 03. day
+  - slug: day4
+    name: 04. day
+  - slug: day5
+    name: 05. day
+  - slug: day6
+    name: 06. day
+  - slug: day7
+    name: 07. day
+  - slug: day8
+    name: 08. day
+  - slug: day9
+    name: 09. day

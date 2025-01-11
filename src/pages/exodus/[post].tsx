@@ -6,7 +6,7 @@ import { GetStaticPaths, GetStaticProps } from "next";
 import { MDXRemote, MDXRemoteSerializeResult } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import PostLayout from "../../components/PostLayout";
-import { fetchPostContent } from "../../lib/posts";
+import { fetchExodusPostContent } from "../../lib/exodus";
 
 export type Props = {
   title: string;
@@ -22,7 +22,7 @@ const slugToPostContent = ((postContents) => {
   let hash = {};
   postContents.forEach((it) => (hash[it.slug] = it));
   return hash;
-})(fetchPostContent());
+})(fetchExodusPostContent());
 
 export default function Post({
   title,
@@ -41,6 +41,7 @@ export default function Post({
       tags={tags}
       author={author}
       description={description}
+      address="/exodus"
     >
       <MDXRemote {...source} />
     </PostLayout>
@@ -48,7 +49,7 @@ export default function Post({
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fetchPostContent().map((it) => "/posts/" + it.slug);
+  const paths = fetchExodusPostContent().map((it) => "/exodus/" + it.slug);
   return {
     paths,
     fallback: false,

@@ -3,10 +3,14 @@ import { TagContent } from "../lib/tags";
 
 type Props = {
   tag: TagContent;
+  address: string;
 };
-export default function Tag({ tag }: Props) {
+export default function Tag({ tag, address }: Props) {
   return (
-    <Link href={"/posts/tags/[[...slug]]"} as={`/posts/tags/${tag.slug}`}>
+    <Link
+      href={address + "/tags/[[...slug]]"}
+      as={address + `/tags/${tag.slug}`}
+    >
       {"#" + tag.name}
     </Link>
   );

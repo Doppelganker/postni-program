@@ -1,9 +1,8 @@
-import React from "react";
-import { PostContent } from "../lib/posts";
+import { PostContent } from "../lib/post";
+import { TagContent } from "../lib/tags";
+import Pagination from "./Pagination";
 import PostItem from "./PostItem";
 import TagLink from "./TagLink";
-import Pagination from "./Pagination";
-import { TagContent } from "../lib/tags";
 
 type Props = {
   posts: PostContent[];
@@ -12,15 +11,16 @@ type Props = {
     current: number;
     pages: number;
   };
+  address: string;
 };
-export default function PostList({ posts, tags, pagination }: Props) {
+export default function PostList({ posts, tags, pagination, address }: Props) {
   return (
     <div className={"container"}>
       <div className={"posts"}>
         <ul className={"post-list"}>
           {posts.map((it, i) => (
             <li key={i}>
-              <PostItem post={it} />
+              <PostItem post={it} address={address} />
             </li>
           ))}
         </ul>
@@ -28,15 +28,15 @@ export default function PostList({ posts, tags, pagination }: Props) {
           current={pagination.current}
           pages={pagination.pages}
           link={{
-            href: (page) => (page === 1 ? "/posts" : "/posts/page/[page]"),
-            as: (page) => (page === 1 ? null : "/posts/page/" + page),
+            href: (page) => (page === 1 ? address : address + "/page/[page]"),
+            as: (page) => (page === 1 ? null : address + "/page/" + page),
           }}
         />
       </div>
       <ul className={"categories"}>
         {tags.map((it, i) => (
           <li key={i}>
-            <TagLink tag={it} />
+            <TagLink tag={it} address={address} />
           </li>
         ))}
       </ul>
