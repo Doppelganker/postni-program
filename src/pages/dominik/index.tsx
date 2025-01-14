@@ -4,11 +4,8 @@ import BasicMeta from "../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../components/meta/OpenGraphMeta";
 import PostList from "../../components/PostList";
 import config from "../../lib/config";
-import {
-  countDominikPosts,
-  listDominikPostContent,
-  PostContent,
-} from "../../lib/dominik";
+import { countDominikPosts, listDominikPostContent } from "../../lib/dominik";
+import { PostContent } from "../../lib/post";
 import { listTags, TagContent } from "../../lib/tags";
 
 type Props = {

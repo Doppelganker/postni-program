@@ -7,8 +7,8 @@ import config from "../../../lib/config";
 import {
   countDominikPosts,
   listDominikPostContent,
-  PostContent,
 } from "../../../lib/dominik";
+import { PostContent } from "../../../lib/post";
 import { listTags, TagContent } from "../../../lib/tags";
 
 type Props = {

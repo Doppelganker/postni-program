@@ -4,11 +4,8 @@ import BasicMeta from "../../../components/meta/BasicMeta";
 import OpenGraphMeta from "../../../components/meta/OpenGraphMeta";
 import PostList from "../../../components/PostList";
 import config from "../../../lib/config";
-import {
-  countExodusPosts,
-  listExodusPostContent,
-  PostContent,
-} from "../../../lib/exodus";
+import { countExodusPosts, listExodusPostContent } from "../../../lib/exodus";
+import { PostContent } from "../../../lib/post";
 import { listTags, TagContent } from "../../../lib/tags";
 
 type Props = {
