@@ -39,6 +39,14 @@ export default function Navigation() {
               Dominikove stopinje
             </Link>
           </li>
+          <li>
+            <Link
+              href="/faq"
+              className={router.pathname.startsWith("/faq") ? "active" : null}
+            >
+              Razlaga
+            </Link>
+          </li>
         </ul>
         <style jsx>
           {`
