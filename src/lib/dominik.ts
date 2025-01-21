@@ -41,7 +41,7 @@ export function fetchDominikPostContent(): PostContent[] {
       // Validate slug string
       if (matterData.slug !== slug) {
         throw new Error(
-          "slug field not match with the path of its content source"
+          `slug ${slug} field not match with the path of its content source`
         );
       }
 
