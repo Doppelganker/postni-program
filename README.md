@@ -40,7 +40,7 @@ Or access the following demo site:
 To create your blog using the template, open your terminal, `cd` into the directory you'd like to create the app in,
 and run the following command:
 
-```
+```bash
 npx create-next-app your-blog --example "https://github.com/wutali/nextjs-netlify-blog-template"
 ```
 
@@ -61,7 +61,7 @@ All components use [styled-jsx](https://github.com/vercel/styled-jsx) and [css-m
 
 The directory tree containing the blog source code are described below:
 
-```
+```folder
 meta: yaml files defining metadata like authors or tags
 public: images, favicons and other static assets
 src
@@ -107,6 +107,10 @@ as following instructions:
 - [Next.js Starter Template for TypeScript](https://github.com/vercel/next-learn-starter/tree/master/typescript-final)
 - [Building Blog with NextJS and Netlify CMS](https://dev.to/mefaba/building-blog-with-nextjs-and-netlify-cms-fom)
 - [Unicons](https://github.com/Iconscout/unicons)
+
+## Analytics
+
+<https://post.goatcounter.com/>
 
 ## License
 
